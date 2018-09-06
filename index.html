@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     
+
+    
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+
+
+
+<style>
+	body{
+		margin-top: 70px;
+		background:#333;
+		background-image: url(i.jpg);
+		background-size: cover;
+		background-position: center;
+		
+	}
+::placeholder{
+
+		
+		font-weight: bolder;
+		font-size: 25px;
+		font-style: italic;
+      }
+</style>
+
+    <title>Weight/Height Converter</title>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+		<div class="col-md-4">
+		<h1 class="display-4 text-center mb-3 " style="font-weight: bolder;font-family:courier;color:#C70039;">Weight Converter</h1>
+      <form style="margin-left:5px;">
+      	<div class="form-group">
+      		<input id="lbsInput" type="number" class="form-control form-control-lg" placeholder="Enter Pounds">
+      	</div>
+      </form>
+ 		<div id="output1">
+ 			<a href="i.jpg"></a>
+ 			<div class="card teal lighten-5 ">
+ 				<div class="card-block">
+ 					<h4>Grams:</h4>
+ 					<div id="gramsOutput"></div>
+ 				</div></div>
+
+ 				
+ 			<div class="card teal darken-5">
+ 				<div class="card-block">
+ 					<h4>KiloGrams:</h4>
+ 					<div id="kgOutput"></div>
+ 				</div></div>
+
+
+ 				
+ 			<div class="card teal lighten-2 ">
+ 				<div class="card-block">
+ 					<h4>Ounces:</h4>
+ 					<div id="ozOutput"></div>
+ 				</div></div></div>
+
+   </div>
+      </div>
+	</div>
+	<div class="container" style="margin-left: 800px; margin-bottom:300px">
+		<div class="row">
+		<div class="col-md-4 ">
+		<h1 class="display-4 text-center mb-3" style="font-weight: bolder;font-family:courier;color:#581845;">Height Converter</h1>
+      <form>
+      	<div class="form-group">
+      		<input id="CmInput" type="number" class="form-control form-control-lg" placeholder="Enter Centimeter">
+      	</div>
+      </form>
+ 		<div id="output2">
+ 			<div class="card #0d47a1 blue lighten-5 ">
+ 				<div class="card-block">
+ 					<h4>Meter:</h4>
+ 					<div id="mOutput"></div>
+ 				</div></div>
+
+ 				
+ 			<div class="card #0d47a1 blue lighten-2">
+ 				<div class="card-block">
+ 					<h4>Inches:</h4>
+ 					<div id="inOutput"></div>
+ 				</div></div>
+
+
+ 				
+ 			<div class="card #0d47a1 blue lighten-1">
+ 				<div class="card-block">
+ 					<h4>Feet:</h4>
+ 					<div id="ftOutput"></div>
+ 				</div></div></div>
+
+   </div>
+      </div>
+	</div>
+
+
+
+<script >
+	document.getElementById('output1').style.visibility='hidden';
+	document.getElementById('lbsInput').addEventListener('input', function(e){
+		document.getElementById('output1').style.visibility='visible';
+		
+		let lbs = e.target.value;
+		document.getElementById('gramsOutput').innerHTML=
+		lbs/0.0022046;
+
+		document.getElementById('kgOutput').innerHTML=
+		lbs/2.2046;
+		
+		document.getElementById('ozOutput').innerHTML=
+		lbs*16;
+		
+	})
+</script>
+
+<script >
+	document.getElementById('output2').style.visibility='hidden';
+	document.getElementById('CmInput').addEventListener('input', function(e){
+		document.getElementById('output2').style.visibility='visible';
+		
+		let Cm = e.target.value;
+		document.getElementById('mOutput').innerHTML=
+		Cm*0.01;
+
+		document.getElementById('inOutput').innerHTML=
+		Cm*0.39;
+		
+		document.getElementById('ftOutput').innerHTML=
+		Cm*0.0328084;
+		
+	})
+</script>
+
+</body>
+</html>
